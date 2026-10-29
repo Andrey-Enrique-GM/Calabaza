@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monsters</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Halloween Monsters</h1>
+
+        <form action="/monster" method="post">
+            <label>Nombre <input type="text" name="name" required></label>
+            <label>Poder <input type="text" name="power" required></label>
+            <button type="submit">Agregar</button>
+        </form>
+
+        <table>
+            <tr>
+                <th>Nombre</th>
+                <th>Poder</th>
+            </tr>
+            {% for monster in monsters %}
+            <tr>
+                <td>{{ monster.name }}</td>
+                <td>{{ monster.power }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
