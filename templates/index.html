@@ -8,13 +8,15 @@
 </head>
 <body>
     <div class="container">
-        <h1>Halloween Monsters</h1>
+        <h1>Halloween Monsters - By Andrey</h1>
 
         <form action="/monster" method="post">
             <label>Nombre <input type="text" name="name" required></label>
             <label>Poder <input type="text" name="power" required></label>
             <button type="submit">Agregar</button>
         </form>
+
+        <!-- Display the list of monsters with a final image -->
 
         <table>
             <tr>
@@ -28,6 +30,9 @@
             </tr>
             {% endfor %}
         </table>
+
+         <img src="{{ url_for('static', filename='images/iwawa.jpg') }}" alt="Monster Image" class="monster-image">
+
     </div>
 </body>
 </html>
