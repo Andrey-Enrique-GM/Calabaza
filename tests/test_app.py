@@ -77,7 +77,8 @@ def test_monster_save(database_connection):
     monster.save()
 
     assert cursor.executed_query == (
-        "INSERT INTO monster (name, power) VALUES (%s, %s)"
+        #"INSERT INTO monster (name, power) VALUES (%s, %s)"
+        "INSERT INTO monsters (name, power) VALUES (%s, %s)"
     )
     assert cursor.executed_params == ("Chihuahua", "Ladrido")
     assert connection.committed
