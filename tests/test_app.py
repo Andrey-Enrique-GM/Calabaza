@@ -63,7 +63,7 @@ def test_monster_get_all(database_connection):
 
     assert len(result) >= 1
     assert result == [{"id": 1, "name": "Chihuahua", "power": "Ladrido"}]
-    assert cursor.executed_query == "SELECT id, name, power FROM monsters"
+    assert cursor.executed_query == "SELECT id, name, power FROM monster"
     assert connection.cursor_options == {"dictionary": True}
     assert cursor.closed
     assert connection.closed
@@ -77,7 +77,7 @@ def test_monster_save(database_connection):
     monster.save()
 
     assert cursor.executed_query == (
-        "INSERT INTO monsters (name, power) VALUES (%s, %s)"
+        "INSERT INTO monster (name, power) VALUES (%s, %s)"
     )
     assert cursor.executed_params == ("Chihuahua", "Ladrido")
     assert connection.committed
