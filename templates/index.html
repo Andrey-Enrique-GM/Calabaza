@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Halloween CHIHUAHUAS - By Andrey</h1>
+        <h1>Halloween Monsters - By Andrey</h1>
 
         <form action="/monster" method="post">
             <label>Nombre <input type="text" name="name" required></label>
@@ -22,13 +22,11 @@
             <tr>
                 <th>Nombre</th>
                 <th>Poder</th>
-                <th>Descripcion</th>
             </tr>
             {% for monster in monsters %}
             <tr>
                 <td>{{ monster.name }}</td>
                 <td>{{ monster.power }}</td>
-                <td>{{ monster.description }}</td>
             </tr>
             {% endfor %}
         </table>
